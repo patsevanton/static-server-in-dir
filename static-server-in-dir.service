@@ -1,0 +1,13 @@
+[Unit]
+Description=static-server-in-dir.service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/tmp
+ExecStart = /usr/bin/ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'
+ExecReload = /bin/kill -s HUP $MAINPID
+ExecStop = /bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
