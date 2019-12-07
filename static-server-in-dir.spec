@@ -2,7 +2,7 @@
 
 Name:    static-server-in-dir
 Version: 0.1
-Release: 3
+Release: 4
 Summary: Http static server in your current (or specified) directory
 Group:   Development Tools
 License: ASL 2.0
