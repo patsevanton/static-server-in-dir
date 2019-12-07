@@ -4,8 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/tmp
-ExecStart = /bin/bash -lc "ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
+ExecStart = /bin/bash -lc "cd $HTTP_SERVER_DIR && ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
 ExecReload = /bin/kill -s HUP $MAINPID
 ExecStop = /bin/kill -s TERM $MAINPID
 
