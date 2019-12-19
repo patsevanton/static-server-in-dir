@@ -2,7 +2,7 @@
 
 Name:           static-server-in-dir
 Version:        0.4
-Release:        1
+Release:        2
 Summary:        Http static server in your current (or specified) directory
 License:        ASL 2.0 
 Source0:        main.go
