@@ -8,9 +8,11 @@ yum copr enable antonpatsev/static-server-in-dir
 
 yum -y install static-server-in-dir
 
-export HTTP_SERVER_DIR=`pwd`
+cd to directory
 
-systemctl import-environment HTTP_SERVER_DIR
+static-server-in-dir start
 
-systemctl start static-server-in-dir
+run test, wget apk, or someting
+
+static-server-in-dir stop
 ```
