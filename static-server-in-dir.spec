@@ -12,14 +12,11 @@ BuildRequires:  golang
 A simple Golang http static server in your current (or specified) directory.
 
 %build
-mkdir -p _build/src/github.com/patsevanton/static-server-in-dir
-cp ../SOURCES/main.go _build/src/github.com/patsevanton/static-server-in-dir
-export GOPATH=$(pwd)/_build
-export PATH=$PATH:$(pwd)/_build/bin
-
-pushd _build/src/github.com/patsevanton/static-server-in-dir
-go build -o ../../../../../static-server-in-dir
-popd
+export GOPATH=%{_builddir}/_build
+go get github.com/AlexanderGrom/go-starter
+mkdir -p $GOPATH/src/github.com/patsevanton
+git clone https://github.com/patsevanton/static-server-in-dir.git $GOPATH/src/github.com/patsevanton/static-server-in-dir
+go build -o static-server-in-dir $GOPATH/src/github.com/patsevanton/static-server-in-dir/main.go
 
 %install
 install -d %{buildroot}%{_bindir}
