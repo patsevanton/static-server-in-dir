@@ -1,8 +1,8 @@
 %global _prefix /usr/local
 
 Name:    static-server-in-dir
-Version: 0.1
-Release: 4
+Version: 0.2
+Release: 1
 Summary: Http static server in your current (or specified) directory
 Group:   Development Tools
 License: ASL 2.0
